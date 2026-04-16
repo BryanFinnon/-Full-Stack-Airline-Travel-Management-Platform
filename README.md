@@ -1,8 +1,6 @@
-# Full-Stack-Airline-Travel-Management-Platform
-Built a full-stack airline booking platform for flight search, reservations, and itinerary tracking. Designed relational database schema, implemented REST APIs, and developed responsive UI components. Tech: React, PHP, SQL.
 # 🎫 Airline Travel Management Platform
 
-> Full-stack airline booking system for flight search, reservation management, and itinerary tracking.
+> Full-stack airline booking system for flight search, reservation management, and itinerary tracking.Designed relational database schema, implemented REST APIs, and developed responsive UI components. Tech: React, PHP, SQL.
 
 ---
 
