@@ -1,0 +1,26 @@
+### Health
+GET http://localhost:8000/index.php?route=health
+
+### Search flights
+GET http://localhost:8000/index.php?route=flights/search&origin=Montreal&destination=Paris&date=2026-05-18
+
+### List reservations
+GET http://localhost:8000/index.php?route=reservations
+
+### Create reservation
+POST http://localhost:8000/index.php?route=reservations
+Content-Type: application/json
+
+{
+  "schedule_id": 1,
+  "first_name": "Carolina",
+  "last_name": "Konan",
+  "email": "carolina@example.com",
+  "phone": "+1-514-444-1234",
+  "passport_number": "CA999888",
+  "nationality": "Canadian",
+  "seat_number": "14B"
+}
+
+### Track itinerary
+GET http://localhost:8000/index.php?route=itineraries/reservation/1
