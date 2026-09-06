@@ -2,11 +2,19 @@
 
 class Database
 {
-    private string $host = "127.0.0.1";
-    private string $dbName = "airline_platform";
-    private string $username = "root";
-    private string $password = "";
+    private string $host;
+    private string $dbName;
+    private string $username;
+    private string $password;
     private ?PDO $connection = null;
+
+    public function __construct()
+    {
+        $this->host = getenv("DB_HOST") ?: "127.0.0.1";
+        $this->dbName = getenv("DB_NAME") ?: "airline_platform";
+        $this->username = getenv("DB_USER") ?: "root";
+        $this->password = getenv("DB_PASSWORD") ?: "";
+    }
 
     public function connect(): PDO
     {
