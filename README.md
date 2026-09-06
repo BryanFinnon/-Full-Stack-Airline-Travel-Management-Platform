@@ -1,109 +1,75 @@
-# 🎫 Airline Travel Management Platform
+# Full-Stack Airline Travel Management Platform
 
-> Full-stack airline booking system for flight search, reservation management, and itinerary tracking.Designed relational database schema, implemented REST APIs, and developed responsive UI components. Tech: React, PHP, SQL.
+A portfolio project demonstrating an end-to-end airline booking workflow with a React frontend, PHP REST API, and MySQL database.
 
----
+## Features
 
-## 📖 Overview
+- Search flights by origin, destination, and date
+- Create and list reservations
+- Retrieve itinerary details
+- Seeded relational database for local demonstration
+- Responsive React interface
+- Environment-based frontend and database configuration
 
-This project implements a **complete airline travel management platform** that allows users to search for flights, manage reservations, and track itineraries.
+## Architecture
 
-It combines a structured backend, relational database design, and a responsive frontend to simulate real-world booking systems.
+```text
+React client  →  PHP REST API  →  MySQL
+ frontend/         backend/       database/
+```
 
----
+## Repository structure
 
-## 🚀 Key Features
+- `frontend/` — React application and API client
+- `backend/` — PHP controllers, models, and response utilities
+- `database/` — schema and seed data
+- `LEARNING_GUIDE.md` — implementation notes and learning guide
 
-- ✈️ Flight search and filtering  
-- 🎫 Reservation and booking management  
-- 🧾 Itinerary tracking  
-- 🔄 REST API integration  
-- 📱 Responsive user interface  
+## Local setup
 
----
+### Database
 
-## 📈 Key Stats
-
-- **Architecture:** Full-stack (Frontend + Backend + Database)
-- **Database:** 5+ relational tables
-- **Frontend Components:** 4+ UI modules
-- **Core Features:** Search, booking, tracking
-- **API Type:** RESTful architecture
-
----
-
-## 🧠 System Design
-
-### 1. Backend
-- Handles business logic and API endpoints  
-- Manages booking workflows and data processing  
-
-### 2. Database Design
-Relational schema including:
-- flights  
-- passengers  
-- reservations  
-- itineraries  
-- schedules  
-
-### 3. Frontend
-- Built with React  
-- Responsive UI for booking and search  
-- Dynamic interaction with backend APIs  
-
----
-
-## ⚙️ Tech Stack
-
-- **React**
-- **PHP**
-- **SQL**
-- **REST APIs**
-
----
-
-## ⚙️ Workflow
-
-1. User searches for available flights  
-2. Backend queries database  
-3. Results displayed via frontend  
-4. User books a flight  
-5. Reservation stored and tracked  
-6. Itinerary updated dynamically  
-
----
-
-## 📊 Example Use Case
-
-**User Action:**
-- Search: Montreal → Paris  
-- Select flight  
-- Confirm booking  
-
-**System Output:**
-- Reservation created  
-- Itinerary generated  
-- Booking stored in database  
-
----
-
-## 📂 Project Structure
+Create a MySQL database and import the schema and seed data:
 
 ```bash
-.
-├── frontend/
-│   ├── src/
-│   ├── components/
-│   └── App.js
-│
-├── backend/
-│   ├── api/
-│   ├── controllers/
-│   ├── models/
-│   └── routes/
-│
-├── database/
-│   ├── schema.sql
-│   └── seed.sql
-│
-├── README.md
+mysql -u root -p < database/schema.sql
+mysql -u root -p airline_platform < database/seed.sql
+```
+
+Configure the backend with environment variables:
+
+```bash
+export DB_HOST=127.0.0.1
+export DB_NAME=airline_platform
+export DB_USER=root
+export DB_PASSWORD=your_password
+```
+
+Start the PHP API from the repository root:
+
+```bash
+php -S localhost:8000 -t backend
+```
+
+### Frontend
+
+```bash
+cd frontend
+cp ../.env.example .env
+npm ci
+npm start
+```
+
+By default the client calls `http://localhost:8000/index.php?route=`. Override it with `REACT_APP_API_BASE_URL`.
+
+## Engineering notes
+
+Generated dependencies and production builds are intentionally excluded from Git. Use `npm ci` to reproduce the frontend from `package-lock.json`.
+
+## Limitations
+
+This is a local portfolio prototype. Authentication, payment processing, production deployment, rate limiting, and automated end-to-end tests are not included.
+
+## Author
+
+Bryan Finnon — MSc Computer Science (Distinction), focused on applied AI and software engineering.
