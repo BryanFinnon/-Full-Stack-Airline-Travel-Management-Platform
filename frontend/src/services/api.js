@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8000/index.php?route=";
+const API_BASE_URL =\n  process.env.REACT_APP_API_BASE_URL ||\n  "http://localhost:8000/index.php?route=";
 
 async function request(route, options = {}) {
   const response = await fetch(`${API_BASE_URL}${route}`, {
