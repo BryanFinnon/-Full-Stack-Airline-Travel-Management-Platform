@@ -1,42 +1,37 @@
-# Full-Stack Airline Travel Management Platform
+# Airline Travel Management Platform
 
-A portfolio project demonstrating an end-to-end airline booking workflow with a React frontend, PHP REST API, and MySQL database.
+A full-stack portfolio project implementing flight search, reservations and itinerary management with a React client, PHP REST API and MySQL database.
 
 ## Features
 
-- Search flights by origin, destination, and date
-- Create and list reservations
-- Retrieve itinerary details
-- Seeded relational database for local demonstration
-- Responsive React interface
-- Environment-based frontend and database configuration
+- Search flights by origin, destination and date
+- Browse available departure and arrival cities
+- Create and retrieve reservations
+- Generate itinerary records for bookings
+- Seed a relational database with demonstration data
+- Configure API and database connections through environment variables
 
 ## Architecture
 
 ```text
-React client  →  PHP REST API  →  MySQL
- frontend/         backend/       database/
+React frontend  →  PHP REST API  →  MySQL database
+frontend/          backend/         database/
 ```
 
-## Repository structure
+## Technology
 
-- `frontend/` — React application and API client
-- `backend/` — PHP controllers, models, and response utilities
-- `database/` — schema and seed data
-- `LEARNING_GUIDE.md` — implementation notes and learning guide
+React 18 · JavaScript · PHP 8 · PDO · MySQL · REST APIs
 
 ## Local setup
 
-### Database
-
-Create a MySQL database and import the schema and seed data:
+### 1. Database
 
 ```bash
 mysql -u root -p < database/schema.sql
 mysql -u root -p airline_platform < database/seed.sql
 ```
 
-Configure the backend with environment variables:
+Set the backend configuration:
 
 ```bash
 export DB_HOST=127.0.0.1
@@ -45,31 +40,24 @@ export DB_USER=root
 export DB_PASSWORD=your_password
 ```
 
-Start the PHP API from the repository root:
+### 2. API
+
+From the repository root:
 
 ```bash
 php -S localhost:8000 -t backend
 ```
 
-### Frontend
+### 3. Frontend
 
 ```bash
 cd frontend
-cp ../.env.example .env
-npm ci
+npm install
 npm start
 ```
 
-By default the client calls `http://localhost:8000/index.php?route=`. Override it with `REACT_APP_API_BASE_URL`.
+The client uses `http://localhost:8000/index.php?route=` by default. Override it with `REACT_APP_API_BASE_URL` when required.
 
-## Engineering notes
+## Scope
 
-Generated dependencies and production builds are intentionally excluded from Git. Use `npm ci` to reproduce the frontend from `package-lock.json`.
-
-## Limitations
-
-This is a local portfolio prototype. Authentication, payment processing, production deployment, rate limiting, and automated end-to-end tests are not included.
-
-## Author
-
-Bryan Finnon — MSc Computer Science (Distinction), focused on applied AI and software engineering.
+This repository demonstrates application architecture and core travel-management workflows. Authentication, payments, automated end-to-end tests and production deployment are outside the current scope.
