@@ -1,5 +1,7 @@
 # Airline Travel Management Platform
 
+[![Quality checks](https://github.com/BryanFinnon/airline-travel-management-platform/actions/workflows/quality.yml/badge.svg)](https://github.com/BryanFinnon/airline-travel-management-platform/actions/workflows/quality.yml)
+
 A full-stack portfolio project implementing flight search, reservations and itinerary management with a React client, PHP REST API and MySQL database.
 
 ## Features

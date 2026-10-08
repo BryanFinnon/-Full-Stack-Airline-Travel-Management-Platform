@@ -1,1 +1,5 @@
-.env\n.env.local\nfrontend/node_modules/\nfrontend/build/\n.DS_Store\n
+.env
+.env.local
+frontend/node_modules/
+frontend/build/
+.DS_Store
